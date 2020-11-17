@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Thực hành] Tạo và thao tác với mảng</title>
+</head>
+<body>
+      <table>
+            <tbody>
+                  <tr>
+                        <td><input type="text" name="inputArrayElements" id="inputArrayElements"></td>
+                        <td><button type="button" id="btnAdd">Add</button></td>
+                        <td><button type="button" id="btnDisplay">Display</button></td>
+                  </tr>
+                  <tr>
+                        <td colspan="3" id="arrayElements"></td>
+                  </tr>
+            </tbody>
+      </table>
+      
+      
+      
+      <script>
+            sampleArray = [];
+            //add event by DOM for button
+            document.getElementById("btnAdd").addEventListener("click", addArrayElements);
+            document.getElementById("btnDisplay").addEventListener("click", displayArrayElements);
+
+            //function add new Element for sampleArray, the value input will disappear after that.
+            function addArrayElements() {
+                  sampleArray.push(document.getElementById("inputArrayElements").value);
+                  document.getElementById("inputArrayElements").value = "";
+            }
+            
+            //display all Elements of Array
+            function displayArrayElements() {
+                  document.getElementById("arrayElements").innerHTML = "";
+                  for (let i = 0; i < sampleArray.length; i++) {
+                        document.getElementById("arrayElements").innerHTML += `Element ${i+1} = ${sampleArray[i]}<br>`;
+                  }
+            }
+
+      </script>
+</body>
+</html>
