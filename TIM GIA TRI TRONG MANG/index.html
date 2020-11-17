@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Thực hành] Tìm giá trị trong mảng</title>
+</head>
+<body>
+      
+      <script>
+            let numbers = [-3, 5, 1, 3, 2, 10];
+            let valueGuess = parseInt(prompt("Nhập vào số cần kiểm tra"));
+            let numbersLength = numbers.length;
+            let isvalueGuessHaveInNumbers = false;
+            for (let index = 0; index < numbersLength; index++) {
+                  if (numbers[index] === valueGuess) {
+                        document.write(`Vị trí của số đã nhập trong mảng numbers là ${index}`);
+                        isvalueGuessHaveInNumbers = true;
+                        break;
+            }
+            }
+
+            if (!isvalueGuessHaveInNumbers) {document.write("Số đã nhập không có trong mảng numbers");}
+      </script>
+</body>
+</html>
